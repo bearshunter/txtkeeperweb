@@ -11,14 +11,15 @@ import javax.persistence.Id;
 @Data
 public class User {
 
-     @Id
+    @Id
     @GeneratedValue
-     private Long id;
+    private Long id;
     private String firstName;
     private String lastName;
     private String description;
 
-    private User() {}
+    private User() {
+    }
 
     public User(String firstName, String lastName, String description) {
         this.firstName = firstName;
