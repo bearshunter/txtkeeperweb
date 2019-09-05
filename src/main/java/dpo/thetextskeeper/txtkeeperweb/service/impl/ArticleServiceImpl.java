@@ -6,9 +6,11 @@ import dpo.thetextskeeper.txtkeeperweb.repository.ArticleRepository;
 import dpo.thetextskeeper.txtkeeperweb.repository.PhraseRepository;
 import dpo.thetextskeeper.txtkeeperweb.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
@@ -24,12 +26,7 @@ public class ArticleServiceImpl implements ArticleService {
 
 
     @Override
-    public List<Article> findArticlesByOwner(long ownerId) {
-        return articleRepository.findByOwnerId(ownerId);
-    }
-
-    @Override
-    public Phrase addPhraise(Phrase phrase) {
+    public Phrase addPhrase(Phrase phrase) {
         return null;
     }
 }

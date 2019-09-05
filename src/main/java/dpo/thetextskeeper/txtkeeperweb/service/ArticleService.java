@@ -8,10 +8,7 @@ import java.util.List;
 public interface ArticleService  {
 
 
-    List<Article> findArticlesByOwner(long ownerId);
-
-
     Article createArticle(Article article);
 
-    Phrase addPhraise(Phrase phrase);
+    Phrase addPhrase(Phrase phrase);
 }

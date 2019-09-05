@@ -1,9 +1,9 @@
 package dpo.thetextskeeper.txtkeeperweb.repository;
 
 import dpo.thetextskeeper.txtkeeperweb.entity.Article;
+import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
+public interface ArticleRepository extends CrudRepository<Article, Long> {
 
-public interface ArticleRepository   {
-    List<Article> findByOwnerId(long ownerId);
+
 }

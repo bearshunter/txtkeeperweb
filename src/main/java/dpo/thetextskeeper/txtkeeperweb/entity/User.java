@@ -18,8 +18,7 @@ public class User {
     private String lastName;
     private String description;
 
-    private User() {
-    }
+
 
     public User(String firstName, String lastName, String description) {
         this.firstName = firstName;
