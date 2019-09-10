@@ -23,6 +23,9 @@ public class Article {
 
     private String headline;
 
+    private long created;
+
+
     public Article(long ownerId, String headline) {
         this.ownerId = ownerId;
         this.headline = headline;

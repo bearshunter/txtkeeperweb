@@ -19,10 +19,6 @@ public class UserController {
         return userService.findById(id);
     }
 
-    @GetMapping("/")
-    public List<User> getAll() {
-        return userService.findAll();
-    }
 
     @PostMapping
     public User save(@RequestBody User newUser) {

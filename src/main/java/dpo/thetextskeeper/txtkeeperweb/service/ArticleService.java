@@ -1,14 +1,15 @@
 package dpo.thetextskeeper.txtkeeperweb.service;
 
 import dpo.thetextskeeper.txtkeeperweb.entity.Article;
-import dpo.thetextskeeper.txtkeeperweb.entity.Phrase;
 
 import java.util.List;
 
 public interface ArticleService  {
 
 
-    Article createArticle(Article article);
+    long create(Article article);
 
-    Phrase addPhrase(Phrase phrase);
+    List<Article> findAll();
+
+    Article findById(long id);
 }
