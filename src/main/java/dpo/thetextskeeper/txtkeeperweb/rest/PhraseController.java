@@ -15,7 +15,7 @@ public class PhraseController {
     @Autowired
     private PhraseService phraseService;
 
-    @GetMapping("/article/{articleId}/phrase/")
+    @GetMapping("/rest/article/{articleId}/phrase/")
     public List<Phrase> list( @PathVariable("articleId") long articleId) {
         return phraseService.findByArticle(articleId);
     }

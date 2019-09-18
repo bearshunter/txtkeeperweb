@@ -1,12 +1,8 @@
 package dpo.thetextskeeper.txtkeeperweb;
 
 import dpo.thetextskeeper.txtkeeperweb.entity.Article;
-import dpo.thetextskeeper.txtkeeperweb.entity.FileData;
 import dpo.thetextskeeper.txtkeeperweb.entity.Phrase;
 import dpo.thetextskeeper.txtkeeperweb.entity.User;
-import dpo.thetextskeeper.txtkeeperweb.repository.ArticleRepository;
-import dpo.thetextskeeper.txtkeeperweb.repository.FileDataRepository;
-import dpo.thetextskeeper.txtkeeperweb.repository.UserRepository;
 import dpo.thetextskeeper.txtkeeperweb.service.ArticleService;
 import dpo.thetextskeeper.txtkeeperweb.service.PhraseService;
 import dpo.thetextskeeper.txtkeeperweb.service.UserService;
@@ -30,7 +26,7 @@ public class TxtkeeperWebApplication {
 
             final User savedUser = userService.save(new User("test", "test@mail.com"));
             for (int i = 1; i < 6; i++) {
-                final Article article = new Article(savedUser.getId(), "Test article " + 1);
+                final Article article = new Article(savedUser.getId(), "Test article " + i);
                 article.setCreated(System.currentTimeMillis());
                 final long articleId = articleService.create(article);
                 phraseService.createPhrase(new Phrase(articleId,
@@ -57,10 +53,6 @@ public class TxtkeeperWebApplication {
                 phraseService.createPhrase(new Phrase(articleId,
                         "My apartment consist of 3 rooms.",
                         "Meine Wohnung bestehet aus 3 Zimmern."));
-
-
-
-
             }
         };
     }
