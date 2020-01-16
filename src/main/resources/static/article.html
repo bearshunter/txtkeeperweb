@@ -9,6 +9,22 @@
 <h1> Article 1</h1>
 <div id="container"></div>
 </body>
+<script>
+    $(document).ready(function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        $.get("/keeper/rest/article/" + id + "/phrase/", function (data, status) {
+            const phraseArray = data;
+            const container = document.getElementById("container");
+            for (let i = 0; i < phraseArray.length; i++) {
+                const phrase = phraseArray[i];
+                container.innerHTML = container.innerHTML + "<p>" +phrase.enText + "|" + phrase.deText + "</p>";
+            }
+        });
+
+    });
+
+</script>
 
 
 </html>

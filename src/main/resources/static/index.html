@@ -6,7 +6,7 @@
     <script src="js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-<h1> Articles </h1>
+<h1> Articles</h1>
 <div id="container">
 
 </div>
@@ -14,25 +14,16 @@
 
 
 <script>
-
     $(document).ready(function () {
-
-        cont id = 20;
-
-        $.get("/keeper/rest/article/"+id, function (data, status) {
-
+        $.get("/keeper/rest/article/", function (data, status) {
             const articleArray = data;
-           const container = document.getElementById("container");
-
+            const container = document.getElementById("container");
             for (let i = 0; i < articleArray.length; i++) {
                 const article = articleArray[i];
                 const linkToArticle = "<a href='" + "/keeper/article.html?id=" + article.id + "'>";
                 container.innerHTML = container.innerHTML + linkToArticle + "<p>" + article.headline + "</p></a>";
             }
-
-
         });
-
     });
 </script>
 
