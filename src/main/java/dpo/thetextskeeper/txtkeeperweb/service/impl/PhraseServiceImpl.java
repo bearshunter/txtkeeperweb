@@ -1,6 +1,6 @@
 package dpo.thetextskeeper.txtkeeperweb.service.impl;
 
-import dpo.thetextskeeper.txtkeeperweb.entity.Phrase;
+import dpo.thetextskeeper.txtkeeperweb.entity.PhraseCard;
 import dpo.thetextskeeper.txtkeeperweb.repository.PhraseRepository;
 import dpo.thetextskeeper.txtkeeperweb.service.PhraseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +16,12 @@ public class PhraseServiceImpl implements PhraseService {
     private PhraseRepository phraseRepository;
 
 
-    public void createPhrase(Phrase phrase){
+    public void createPhrase(PhraseCard phrase){
         phraseRepository.save(phrase);
     }
 
     @Override
-    public List<Phrase> findByArticle(long articleId) {
+    public List<PhraseCard> findByArticle(long articleId) {
         return phraseRepository.findByArticle(articleId);
     }
 }

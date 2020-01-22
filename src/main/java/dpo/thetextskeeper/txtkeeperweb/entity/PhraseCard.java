@@ -7,24 +7,20 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class Phrase {
-
-    public Phrase(long articleId, String enText, String deText) {
-        this.articleId = articleId;
-        this.enText = enText;
-        this.deText = deText;
-    }
+public class PhraseCard {
 
     @Id
     @GeneratedValue
     private long id;
     private long articleId;
-    private String enText;
-    private String deText;
-    private String ruText;
+    @NotBlank(message = "phrase is mandatory")
+    private String phrase;
+    @NotBlank(message = "translation is mandatory")
+    private String translation;
 }

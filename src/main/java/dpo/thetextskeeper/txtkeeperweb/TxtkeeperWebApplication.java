@@ -1,7 +1,7 @@
 package dpo.thetextskeeper.txtkeeperweb;
 
 import dpo.thetextskeeper.txtkeeperweb.entity.Article;
-import dpo.thetextskeeper.txtkeeperweb.entity.Phrase;
+import dpo.thetextskeeper.txtkeeperweb.entity.PhraseCard;
 import dpo.thetextskeeper.txtkeeperweb.entity.User;
 import dpo.thetextskeeper.txtkeeperweb.service.ArticleService;
 import dpo.thetextskeeper.txtkeeperweb.service.PhraseService;
@@ -29,28 +29,28 @@ public class TxtkeeperWebApplication {
                 final Article article = new Article(savedUser.getId(), "Test article " + i);
                 article.setCreated(System.currentTimeMillis());
                 final long articleId = articleService.create(article);
-                phraseService.createPhrase(new Phrase(articleId,
+                phraseService.createPhrase(new PhraseCard(articleId,
                         "We wait for you.",
                         "Wir warten auf dich."));
-                phraseService.createPhrase(new Phrase(articleId,
+                phraseService.createPhrase(new PhraseCard(articleId,
                         "Her family move in a new apartment tomorrow.",
                         "Ihre Familie ziehen morgen in eine neue Wohnung ein."));
-                phraseService.createPhrase(new Phrase(articleId,
+                phraseService.createPhrase(new PhraseCard(articleId,
                         "She calls him every Sunday.",
                         "Sie ruft ihn jeden Sonntag an."));
-                phraseService.createPhrase(new Phrase(articleId,
+                phraseService.createPhrase(new PhraseCard(articleId,
                         "I go through the park.",
                         "Ich gehe durch den Park."));
-                phraseService.createPhrase(new Phrase(articleId,
+                phraseService.createPhrase(new PhraseCard(articleId,
                         "We work about an hour.",
                         "Wir arbeiten gegen eine Stunde."));
-                phraseService.createPhrase(new Phrase(articleId,
+                phraseService.createPhrase(new PhraseCard(articleId,
                         "The children sit around the table.",
                         "Die Kinder sitzen um den Tisch herum."));
-                phraseService.createPhrase(new Phrase(articleId,
+                phraseService.createPhrase(new PhraseCard(articleId,
                         "I am in a hurry.",
                         "Ich habe es eilig."));
-                phraseService.createPhrase(new Phrase(articleId,
+                phraseService.createPhrase(new PhraseCard(articleId,
                         "My apartment consist of 3 rooms.",
                         "Meine Wohnung bestehet aus 3 Zimmern."));
             }

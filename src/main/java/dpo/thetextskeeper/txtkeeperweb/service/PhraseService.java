@@ -1,12 +1,12 @@
 package dpo.thetextskeeper.txtkeeperweb.service;
 
-import dpo.thetextskeeper.txtkeeperweb.entity.Phrase;
+import dpo.thetextskeeper.txtkeeperweb.entity.PhraseCard;
 
 import java.util.List;
 
 public interface PhraseService {
 
-    void createPhrase(Phrase phrase);
+    void createPhrase(PhraseCard phrase);
 
-    List<Phrase> findByArticle(long articleId);
+    List<PhraseCard> findByArticle(long articleId);
 }

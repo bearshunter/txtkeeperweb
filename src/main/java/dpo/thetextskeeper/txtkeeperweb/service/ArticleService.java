@@ -9,6 +9,9 @@ public interface ArticleService  {
 
     long create(Article article);
 
+    void update(Article article);
+
+
     List<Article> findAll();
 
     Article findById(long id);

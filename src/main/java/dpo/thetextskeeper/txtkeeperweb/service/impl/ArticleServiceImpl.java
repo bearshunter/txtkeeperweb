@@ -22,7 +22,12 @@ public class ArticleServiceImpl implements ArticleService {
         final Article savedArticle = articleRepository.save(article);
         log.info("article was saved with id:" + savedArticle.getId());
         return savedArticle.getId();
+    }
 
+
+    @Override
+    public void update(Article article) {
+        articleRepository.save(article);
     }
 
     @Override

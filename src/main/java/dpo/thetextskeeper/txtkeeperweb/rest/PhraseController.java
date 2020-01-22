@@ -1,6 +1,6 @@
 package dpo.thetextskeeper.txtkeeperweb.rest;
 
-import dpo.thetextskeeper.txtkeeperweb.entity.Phrase;
+import dpo.thetextskeeper.txtkeeperweb.entity.PhraseCard;
 import dpo.thetextskeeper.txtkeeperweb.service.PhraseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ public class PhraseController {
     private PhraseService phraseService;
 
     @GetMapping("/rest/article/{articleId}/phrase/")
-    public List<Phrase> list( @PathVariable("articleId") long articleId) {
+    public List<PhraseCard> list(@PathVariable("articleId") long articleId) {
         return phraseService.findByArticle(articleId);
     }
 
