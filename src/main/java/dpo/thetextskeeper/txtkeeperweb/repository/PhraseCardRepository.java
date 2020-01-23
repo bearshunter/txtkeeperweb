@@ -9,9 +9,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PhraseRepository extends CrudRepository<PhraseCard, Long> {
+public interface PhraseCardRepository extends CrudRepository<PhraseCard, Long> {
 
-    @Query("select p from PhraseCard p where p.articleId = :articleId")
-    List<PhraseCard> findByArticle(@Param("articleId") long articleId);
+    @Query("select p from PhraseCard p where p.lessonId = :lessonId")
+    List<PhraseCard> findByLesson(@Param("lessonId") long lessonId);
+
 
 }

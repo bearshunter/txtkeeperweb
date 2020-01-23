@@ -6,19 +6,20 @@
     <script src="js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-<h1> Article 1</h1>
+<h1 id="headline"></h1>
 <div id="container"></div>
 </body>
 <script>
     $(document).ready(function () {
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
-        $.get("/keeper/rest/article/" + id + "/phrase/", function (data, status) {
-            const phraseArray = data;
+        $.get("/keeper/rest/lesson/" + id, function (data, status) {
+            headline.innerHTML = data.headline;
+            const phraseArray = data.phraseCards;
             const container = document.getElementById("container");
             for (let i = 0; i < phraseArray.length; i++) {
                 const phrase = phraseArray[i];
-                container.innerHTML = container.innerHTML + "<p>" +phrase.enText + "|" + phrase.deText + "</p>";
+                container.innerHTML = container.innerHTML + "<p>" + phrase.phrase + "|" + phrase.translation + "</p>";
             }
         });
 

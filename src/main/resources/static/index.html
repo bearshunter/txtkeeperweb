@@ -10,18 +10,20 @@
 <div id="container">
 
 </div>
+<a href="/keeper/edit.html">Create one more</a>
+
 </body>
 
 
 <script>
     $(document).ready(function () {
-        $.get("/keeper/rest/article/", function (data, status) {
+        $.get("/keeper/rest/lesson/", function (data, status) {
             const articleArray = data;
             const container = document.getElementById("container");
             for (let i = 0; i < articleArray.length; i++) {
-                const article = articleArray[i];
-                const linkToArticle = "<a href='" + "/keeper/article.html?id=" + article.id + "'>";
-                container.innerHTML = container.innerHTML + linkToArticle + "<p>" + article.headline + "</p></a>";
+                const lesson = articleArray[i];
+                const linkToArticle = "<a href='" + "/keeper/lesson.html?id=" + lesson.id + "'>";
+                container.innerHTML = container.innerHTML + linkToArticle + "<p>" + lesson.headline + "</p></a>";
             }
         });
     });

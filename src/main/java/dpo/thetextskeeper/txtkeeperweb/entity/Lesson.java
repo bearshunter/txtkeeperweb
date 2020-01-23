@@ -8,18 +8,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class FileData {
+public class Lesson {
+
 
     @Id
     @GeneratedValue
     private long id;
 
-    private String fileName;
+    private long ownerId;
 
-    private Long fileSize;
+    private String headline;
+
+    private long created;
+
+
+    public Lesson(long ownerId, String headline) {
+        this.ownerId = ownerId;
+        this.headline = headline;
+    }
 }

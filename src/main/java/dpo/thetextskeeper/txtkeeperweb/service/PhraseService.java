@@ -8,5 +8,7 @@ public interface PhraseService {
 
     void createPhrase(PhraseCard phrase);
 
-    List<PhraseCard> findByArticle(long articleId);
+    List<PhraseCard> findByLesson(long articleId);
+
+    void createPhraseCards(List<PhraseCard> phraseCards);
 }

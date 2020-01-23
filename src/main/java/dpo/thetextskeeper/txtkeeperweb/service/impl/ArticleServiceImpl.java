@@ -1,7 +1,7 @@
 package dpo.thetextskeeper.txtkeeperweb.service.impl;
 
-import dpo.thetextskeeper.txtkeeperweb.entity.Article;
-import dpo.thetextskeeper.txtkeeperweb.repository.ArticleRepository;
+import dpo.thetextskeeper.txtkeeperweb.entity.Lesson;
+import dpo.thetextskeeper.txtkeeperweb.repository.LessonRepository;
 import dpo.thetextskeeper.txtkeeperweb.service.ArticleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,29 +14,29 @@ import java.util.List;
 public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
-    private ArticleRepository articleRepository;
+    private LessonRepository lessonRepository;
 
 
     @Override
-    public long create(Article article) {
-        final Article savedArticle = articleRepository.save(article);
-        log.info("article was saved with id:" + savedArticle.getId());
-        return savedArticle.getId();
+    public Lesson create(Lesson lesson) {
+        final Lesson savedLesson = lessonRepository.save(lesson);
+        log.info("article was saved with id:" + savedLesson.getId());
+        return savedLesson;
     }
 
 
     @Override
-    public void update(Article article) {
-        articleRepository.save(article);
+    public void update(Lesson lesson) {
+        lessonRepository.save(lesson);
     }
 
     @Override
-    public List<Article> findAll() {
-        return articleRepository.findAll();
+    public List<Lesson> findAll() {
+        return lessonRepository.findAll();
     }
 
     @Override
-    public Article findById(long id) {
-        return articleRepository.findById(id).orElse(null);
+    public Lesson findById(long id) {
+        return lessonRepository.findById(id).orElse(null);
     }
 }

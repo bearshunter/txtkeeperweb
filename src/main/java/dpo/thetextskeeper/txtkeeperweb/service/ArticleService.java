@@ -1,18 +1,18 @@
 package dpo.thetextskeeper.txtkeeperweb.service;
 
-import dpo.thetextskeeper.txtkeeperweb.entity.Article;
+import dpo.thetextskeeper.txtkeeperweb.entity.Lesson;
 
 import java.util.List;
 
 public interface ArticleService  {
 
 
-    long create(Article article);
+    Lesson create(Lesson lesson);
 
-    void update(Article article);
+    void update(Lesson lesson);
 
 
-    List<Article> findAll();
+    List<Lesson> findAll();
 
-    Article findById(long id);
+    Lesson findById(long id);
 }

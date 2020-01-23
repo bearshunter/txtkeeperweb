@@ -8,17 +8,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class PhraseCard {
+public class PhraseCard implements Serializable {
+
+
+    public PhraseCard(long lessonId, String phrase, String translation) {
+        this.lessonId = lessonId;
+        this.phrase = phrase;
+        this.translation = translation;
+    }
+
 
     @Id
     @GeneratedValue
     private long id;
-    private long articleId;
+    private long lessonId;
     @NotBlank(message = "phrase is mandatory")
     private String phrase;
     @NotBlank(message = "translation is mandatory")

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <title>Create a lesson</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).delegate('#addNew', 'click', function (event) {
+                event.preventDefault();
+
+                const headline = $('#headline').val();
+                const lessonObj = {headline: headline};
+                phraseCard=
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "/keeper/rest/lesson",
+                    data: JSON.stringify({'headline': name}),
+                    cache: false,
+                    success: function (result) {
+                        $("#msg").html("<span style='color: green'>Company added successfully</span>");
+                        window.setTimeout(function () {
+                            location.reload()
+                        }, 1000)
+                    },
+                    error: function (err) {
+                        $("#msg").html("<span style='color: red'>Name is required</span>");
+                    }
+                });
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+
+<h2> Create a new lesson</h2>
+
+<form id="add" action="#" class="add_form modal">
+    <p>
+        <label>Headline</label>
+        <input type="text" id="headline" name="headline">
+    </p>
+    <p>
+        <label>#1</label>
+        <input type="text" class="phrase" name="phrase" value="a1">
+        <input type="text" class="translation" name="translation" value="a2">
+    </p>
+    <p>
+        <label>#2</label>
+        <input type="text" class="phrase" name="phrase" value="b1">
+        <input type="text" class="translation" name="translation" value="b2">
+
+    </p>
+    <p>
+        <label>#3</label>
+        <input type="text" class="phrase" name="phrase" value="c1">
+        <input type="text" class="translation" name="translation" value="c2">
+    </p>
+    <p>
+        <input type="submit" id="addNew" value="Submit">
+    </p>
+</form>
+
+</body>
+</html>

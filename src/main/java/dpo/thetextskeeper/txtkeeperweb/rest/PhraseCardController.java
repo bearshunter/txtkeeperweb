@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class PhraseController {
+public class PhraseCardController {
 
     @Autowired
     private PhraseService phraseService;
 
     @GetMapping("/rest/article/{articleId}/phrase/")
     public List<PhraseCard> list(@PathVariable("articleId") long articleId) {
-        return phraseService.findByArticle(articleId);
+        return phraseService.findByLesson(articleId);
     }
 
 }

@@ -1,6 +1,6 @@
 package dpo.thetextskeeper.txtkeeperweb.repository;
 
-import dpo.thetextskeeper.txtkeeperweb.entity.Article;
+import dpo.thetextskeeper.txtkeeperweb.entity.Lesson;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -10,10 +10,10 @@ import java.util.List;
 
 @Repository
 @Transactional
-public interface ArticleRepository extends CrudRepository<Article, Long> {
+public interface LessonRepository extends CrudRepository<Lesson, Long> {
 
-    @Query("select a from Article a")
-    List<Article> findAll();
+    @Query("select a from Lesson a")
+    List<Lesson> findAll();
 
 
 }
