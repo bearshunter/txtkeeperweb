@@ -4,10 +4,40 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>YourApp</title>
     <script src="js/jquery-3.4.1.min.js"></script>
+    <style>
+        #phraseCards {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #phraseCards td, #phraseCards th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #phraseCards tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #phraseCards tr:hover {
+            background-color: #ddd;
+        }
+
+    </style>
 </head>
 <body>
 <h1 id="headline"></h1>
-<div id="container"></div>
+<div id="container">
+
+    <table id="phraseCards">
+        <tbody>
+
+
+        </tbody>
+    </table>
+    <button id="toggle-translation">Show/Hide translations</button>
+</div>
 </body>
 <script>
     $(document).ready(function () {
@@ -16,14 +46,40 @@
         $.get("/keeper/rest/lesson/" + id, function (data, status) {
             headline.innerHTML = data.headline;
             const phraseArray = data.phraseCards;
-            const container = document.getElementById("container");
             for (let i = 0; i < phraseArray.length; i++) {
                 const phrase = phraseArray[i];
-                container.innerHTML = container.innerHTML + "<p>" + phrase.phrase + "|" + phrase.translation + "</p>";
+                insertRow(phrase.phrase, phrase.translation);
             }
         });
 
+        document.getElementById("toggle-translation").onclick = toggleRightSide;
+
+
     });
+
+
+    function insertRow(phrase, translation) {
+        const table = document.getElementById("phraseCards").getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        cell1.innerHTML = phrase;
+        cell2.innerHTML = translation;
+        cell2.className = "translation";
+    }
+
+    function toggleRightSide() {
+        const translations = document.getElementsByClassName("translation");
+        for (let i = 0; i < translations.length; i++) {
+            if(translations[i].style.visibility === ""){
+                translations[i].style.visibility = 'hidden';
+            } else {
+                translations[i].style.visibility = '';
+
+            }
+
+        }
+    }
 
 </script>
 

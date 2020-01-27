@@ -10,28 +10,57 @@
                 event.preventDefault();
 
                 const headline = $('#headline').val();
-                const lessonObj = {headline: headline};
-                phraseCard=
+                const lessonObj = {
+                    headline: headline,
+                    phraseCards: []
+                };
+                const table = document.getElementById("sentences").getElementsByTagName('tbody')[0];
+
+                for (let row of table.rows) {
+                    const phrase = row.cells[0].firstElementChild.value;
+                    const translation = row.cells[1].firstChild.value;
+                    console.log(phrase + " - " + translation);
+                    lessonObj.phraseCards[lessonObj.phraseCards.length] = {
+                        phrase: phrase,
+                        translation: translation
+                    }
+
+
+                }
+                console.log(lessonObj);
+
                 $.ajax({
                     type: "POST",
                     contentType: "application/json; charset=utf-8",
                     url: "/keeper/rest/lesson",
-                    data: JSON.stringify({'headline': name}),
+                    data: JSON.stringify(lessonObj),
                     cache: false,
                     success: function (result) {
-                        $("#msg").html("<span style='color: green'>Company added successfully</span>");
-                        window.setTimeout(function () {
-                            location.reload()
-                        }, 1000)
+                        window.location.href = '/keeper/'
                     },
                     error: function (err) {
-                        $("#msg").html("<span style='color: red'>Name is required</span>");
+                        alert("Error from server!!")
                     }
                 });
             });
 
 
+            $(document).delegate('#addRow', 'click', function (event) {
+                event.preventDefault();
+                addRow();
+            });
+
+
         });
+
+        function addRow() {
+            const table = document.getElementById("sentences").getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            cell1.innerHTML = "<input type=\"text\" name=\"phrase\" >";
+            cell2.innerHTML = "<input type=\"text\" name=\"transation\" >";
+        }
     </script>
 </head>
 <body>
@@ -39,28 +68,35 @@
 <h2> Create a new lesson</h2>
 
 <form id="add" action="#" class="add_form modal">
-    <p>
-        <label>Headline</label>
-        <input type="text" id="headline" name="headline">
-    </p>
-    <p>
-        <label>#1</label>
-        <input type="text" class="phrase" name="phrase" value="a1">
-        <input type="text" class="translation" name="translation" value="a2">
-    </p>
-    <p>
-        <label>#2</label>
-        <input type="text" class="phrase" name="phrase" value="b1">
-        <input type="text" class="translation" name="translation" value="b2">
 
-    </p>
+    <div id="headline-block">
+        <label>Headline</label>
+        <input type="text" id="headline">
+    </div>
+
+    <div id="sentence-block">
+        <table id="sentences">
+            <tbody>
+            <tr>
+                <td><input type="text" name="phrase" value="a1"></td>
+                <td><input type="text" name="translation" value="a2"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="phrase" value="b1"></td>
+                <td><input type="text" name="translation" value="b2"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="phrase" value="c1"></td>
+                <td><input type="text" name="translation" value="c2"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <button type="button" id="addRow">Add</button>
+
+    </div>
     <p>
-        <label>#3</label>
-        <input type="text" class="phrase" name="phrase" value="c1">
-        <input type="text" class="translation" name="translation" value="c2">
-    </p>
-    <p>
-        <input type="submit" id="addNew" value="Submit">
+        <input type="submit" id="addNew" value="Create a lesson">
     </p>
 </form>
 
