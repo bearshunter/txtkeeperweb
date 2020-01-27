@@ -36,7 +36,7 @@
 
         </tbody>
     </table>
-    <button id="toggle-translation">Show/Hide translations</button>
+    <button id="reset">Reset</button>
 </div>
 </body>
 <script>
@@ -50,9 +50,11 @@
                 const phrase = phraseArray[i];
                 insertRow(phrase.phrase, phrase.translation);
             }
+
+            reset();
         });
 
-        document.getElementById("toggle-translation").onclick = toggleRightSide;
+        document.getElementById("reset").onclick = reset;
 
 
     });
@@ -64,19 +66,21 @@
         const cell1 = newRow.insertCell(0);
         const cell2 = newRow.insertCell(1);
         cell1.innerHTML = phrase;
+        cell1.className = "phrase";
+        cell1.addEventListener("click", () => exposeTranslation(cell2));
+
         cell2.innerHTML = translation;
         cell2.className = "translation";
     }
 
-    function toggleRightSide() {
+    const exposeTranslation = function (translation) {
+        translation.style.visibility = '';
+    };
+
+    function reset() {
         const translations = document.getElementsByClassName("translation");
         for (let i = 0; i < translations.length; i++) {
-            if(translations[i].style.visibility === ""){
-                translations[i].style.visibility = 'hidden';
-            } else {
-                translations[i].style.visibility = '';
-
-            }
+            translations[i].style.visibility = 'hidden';
 
         }
     }
