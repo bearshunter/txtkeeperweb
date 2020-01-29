@@ -1,3 +1,68 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.clearfix{
+    content: '';
+    display: table;
+    width: 100%;
+    clear: both;
+}
+
 header{
-    background: url("");
+    background: url("../img/background_header.png") no-repeat center top / cover;
+    height: 220px;
+}
+.header{
+    width: 1200px;
+    margin:  0 auto;
+}
+.logo{
+    margin-top: 25px;
+    height: 100px;
+    width: 90px;
+    float: left;
+}
+nav{
+    float: right;
+    margin-top: 65px;
+}
+.menu{
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+.menu li{
+    float: left;
+    display: block;
+    margin-right: 41px;
+}
+.menu  a{
+    color: #3df1ff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.title h1{
+    font-size: 65px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+}
+.button{
+    background: linear-gradient(to top, #000000, #fff);
+    color: #3df1ff;
+    border-radius: 3px;
+    display: block;
+    width: 240px;
+    padding: 20px;
+    margin: 0 auto;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 60px;
+    margin-bottom: 200px;
+
 }
