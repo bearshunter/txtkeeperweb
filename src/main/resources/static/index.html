@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<div class="page">
 <header>
     <div class="header clearfix">
         <img src="img/logo_pt.png" alt="PT" class="logo">
@@ -16,10 +17,10 @@
                     <a href="#">Home</a>
                 </li>
                 <li>
-                    <a href="#">Articles</a>
+                    <a href="index.html">Lessons</a>
                 </li>
                 <li>
-                    <a href="#">Cabinet</a>
+                    <a href="edit.html">Cabinet</a>
                 </li>
                 <li>
                     <a href="#">Contacts</a>
@@ -29,29 +30,19 @@
     </div>
 </header>
 <div class="title">
-    <h1> Articles</h1>
+    <h1>Lessons</h1>
+</div>
+<div class="lessons" id="container">
+
+</div>
+<div class="button_fix">
+    <a  class="button" href="/keeper/edit.html">Create one more</a>
 </div>
 
-<div id="container">
-
 </div>
-<a  class="button" href="/keeper/edit.html">Create one more</a>
-
 </body>
 
 
-<script>
-    $(document).ready(function () {
-        $.get("/keeper/rest/lesson/", function (data, status) {
-            const articleArray = data;
-            const container = document.getElementById("container");
-            for (let i = 0; i < articleArray.length; i++) {
-                const lesson = articleArray[i];
-                const linkToArticle = "<a href='" + "/keeper/lesson.html?id=" + lesson.id + "'>";
-                container.innerHTML = container.innerHTML + linkToArticle + "<p>" + lesson.headline + "</p></a>";
-            }
-        });
-    });
-</script>
+<script src="js/main.js"></script>
 
 </html>

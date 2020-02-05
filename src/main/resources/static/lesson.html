@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>YourApp</title>
     <script src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
     <style>
         #phraseCards {
             font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -27,7 +28,31 @@
     </style>
 </head>
 <body>
-<h1 id="headline"></h1>
+<header>
+    <div class="header clearfix">
+        <img src="img/logo_pt.png" alt="PT" class="logo">
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="index.html">Lessons</a>
+                </li>
+                <li>
+                    <a href="edit.html">Cabinet</a>
+                </li>
+                <li>
+                    <a href="#">Contacts</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="title">
+    <h2 id="headline"></h2>
+</div>
+
 <div id="container">
 
     <table id="phraseCards">
@@ -39,53 +64,7 @@
     <button id="reset">Reset</button>
 </div>
 </body>
-<script>
-    $(document).ready(function () {
-        const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get('id');
-        $.get("/keeper/rest/lesson/" + id, function (data, status) {
-            headline.innerHTML = data.headline;
-            const phraseArray = data.phraseCards;
-            for (let i = 0; i < phraseArray.length; i++) {
-                const phrase = phraseArray[i];
-                insertRow(phrase.phrase, phrase.translation);
-            }
-
-            reset();
-        });
-
-        document.getElementById("reset").onclick = reset;
-
-
-    });
-
-
-    function insertRow(phrase, translation) {
-        const table = document.getElementById("phraseCards").getElementsByTagName('tbody')[0];
-        const newRow = table.insertRow();
-        const cell1 = newRow.insertCell(0);
-        const cell2 = newRow.insertCell(1);
-        cell1.innerHTML = phrase;
-        cell1.className = "phrase";
-        cell1.addEventListener("click", () => exposeTranslation(cell2));
-
-        cell2.innerHTML = translation;
-        cell2.className = "translation";
-    }
-
-    const exposeTranslation = function (translation) {
-        translation.style.visibility = '';
-    };
-
-    function reset() {
-        const translations = document.getElementsByClassName("translation");
-        for (let i = 0; i < translations.length; i++) {
-            translations[i].style.visibility = 'hidden';
-
-        }
-    }
-
-</script>
+<script src="js/lesson.js"></script>
 
 
 </html>

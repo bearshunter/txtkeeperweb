@@ -62,11 +62,34 @@
             cell2.innerHTML = "<input type=\"text\" name=\"transation\" >";
         }
     </script>
+    <link rel="stylesheet" href="css/edit.css">
 </head>
 <body>
-
-<h2> Create a new lesson</h2>
-
+<header>
+    <div class="header clearfix">
+        <img src="img/logo_pt.png" alt="PT" class="logo">
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="index.html">Lessons</a>
+                </li>
+                <li>
+                    <a href="edit.html">Cabinet</a>
+                </li>
+                <li>
+                    <a href="#">Contacts</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="title">
+    <h1>Create a new lesson</h1>
+</div>
+<div class="form">
 <form id="add" action="#" class="add_form modal">
 
     <div id="headline-block">
@@ -99,6 +122,7 @@
         <input type="submit" id="addNew" value="Create a lesson">
     </p>
 </form>
+</div>
 
 </body>
 </html>
