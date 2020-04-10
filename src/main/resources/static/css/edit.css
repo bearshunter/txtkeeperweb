@@ -1,56 +1,54 @@
-body{
-    padding: 0;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-.clearfix{
-    content: '';
-    display: table;
-    width: 100%;
-    clear: both;
-}
 
-header{
-    background: url("../img/background_header.png") no-repeat center top / cover;
-    height: 220px;
-}
-.header{
-    width: 1200px;
-    margin:  0 auto;
-}
-.logo{
-    margin-top: 25px;
-    height: 100px;
-    width: 90px;
-    float: left;
-}
-nav{
-    float: right;
-    margin-top: 65px;
-}
-.menu{
-    padding: 0;
-    margin: 0;
-    display: block;
-}
-.menu li{
-    float: left;
-    display: block;
-    margin-right: 41px;
-}
-.menu  a{
-    color: #3df1ff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 18px;
-}
-.title h1{
-    font-size: 40px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-top: 10px;
-}
 .form{
-    max-width: 1080px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    background: linear-gradient(to top, #000000, #fff);
+    border-radius: 8px;
+    height: auto;
+    width: auto;
+    margin-left: 45px;
+    margin-top: 45px;
+    margin-right: 45px;
+    box-shadow: 0 0 10px rgba(33, 139, 216, 0.5); /* Параметры тени */
+
+}#headline-block{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     margin-top: 45px;
+     margin-left: 260px;
+     margin-right:260px;
+ }
+ .headline{
+     color: #1b4e85;
+     margin-left: 52%;
+     margin-right: auto;
+     text-decoration: none;
+     text-align: center;
+     text-transform: uppercase;
+     font-size: 20px;
+ }
+input{
+    border-radius: 8px;
+    height: 23px;
+    width: 350px;
+    box-shadow: 0 0 10px rgb(80, 80, 80); /* Параметры тени */
+}
+table{
+    margin-right: auto;
+    margin-left: auto;
+}
+.button{
+    background: linear-gradient(to top, #000000, #fff);
+    color: #3df1ff;
+    border-radius: 8px;
+    width: 240px;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(33, 139, 216, 0.5); /* Параметры тени */
+    margin: 15px;
+    position: relative;
+    left: 41.2%;
 }

@@ -4,51 +4,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>YourApp</title>
     <script src="js/jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <style>
-        #phraseCards {
-            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+    <link rel="stylesheet" href="css/lesson.css">
+    <link rel="stylesheet" href="css/menu.css">
 
-        #phraseCards td, #phraseCards th {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        #phraseCards tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        #phraseCards tr:hover {
-            background-color: #ddd;
-        }
-
-    </style>
 </head>
 <body>
-<header>
-    <div class="header clearfix">
-        <img src="img/logo_pt.png" alt="PT" class="logo">
-        <nav>
-            <ul class="menu">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="index.html">Lessons</a>
-                </li>
-                <li>
-                    <a href="edit.html">Cabinet</a>
-                </li>
-                <li>
-                    <a href="#">Contacts</a>
-                </li>
-            </ul>
-        </nav>
+<div id="navbar">
+    <div id="logo">
+        <img src="img/logo_pt.png" alt="logo">
     </div>
-</header>
+    <div id="nav_links">
+        <a href="#">Home</a>
+        <a href="index1.0.html">Lessons</a>
+        <a href="edit.html">Cabinet</a>
+        <a href="#">Sine Up</a>
+        <a href="#">Contact</a>
+    </div>
+</div>
 <div class="title">
     <h2 id="headline"></h2>
 </div>
@@ -61,7 +33,7 @@
 
         </tbody>
     </table>
-    <button id="reset">Reset</button>
+    <button class="button_fix" id="reset">Reset</button>
 </div>
 </body>
 <script src="js/lesson.js"></script>

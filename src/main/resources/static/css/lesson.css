@@ -1,0 +1,53 @@
+
+.title h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 45px;
+}
+tbody{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+#phraseCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#phraseCards td, #phraseCards th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#phraseCards tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#phraseCards tr:hover {
+    background-color: #ddd;
+}
+/*.button_fix {*/
+    /*display: grid;*/
+    /*grid-template-columns: 1fr;*/
+    /*justify-items: center;*/
+    /*margin-top: 40px;*/
+    /*margin-bottom: 260px;*/
+/*}*/
+/*button{*/
+    /*background: linear-gradient(to top, #000000, #fff);*/
+    /*color: #3df1ff;*/
+    /*border-radius: 8px;*/
+    /*width: 240px;*/
+    /*padding: 20px;*/
+    /*text-decoration: none;*/
+    /*text-align: center;*/
+    /*text-transform: uppercase;*/
+    /*font-size: 20px;*/
+    /*box-shadow: 0 0 10px rgba(33, 139, 216, 0.5); !* Параметры тени *!*/
+    /*margin: 15px;*/
+    /*position: relative;*/
+    /*left: 41.2%;*/
+/*}*/
