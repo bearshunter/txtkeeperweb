@@ -2,7 +2,7 @@ package dpo.thetextskeeper.txtkeeperweb.service.impl;
 
 import dpo.thetextskeeper.txtkeeperweb.entity.Lesson;
 import dpo.thetextskeeper.txtkeeperweb.repository.LessonRepository;
-import dpo.thetextskeeper.txtkeeperweb.service.ArticleService;
+import dpo.thetextskeeper.txtkeeperweb.service.LessonService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 @Slf4j
-public class ArticleServiceImpl implements ArticleService {
+public class LessonServiceImpl implements LessonService {
 
     @Autowired
     private LessonRepository lessonRepository;
@@ -38,5 +38,10 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public Lesson findById(long id) {
         return lessonRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void delete(long id) {
+       lessonRepository.deleteById(id);
     }
 }
