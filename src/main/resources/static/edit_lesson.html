@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit your lesson</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/edit.css">
+</head>
+<body>
+<div id="navbar">
+    <div id="logo">
+        <img src="img/logo_pt.png" alt="logo">
+    </div>
+    <div id="nav_links">
+        <a href="#">Home</a>
+        <a href="index1.0.html">Lessons</a>
+        <a href="edit.html">Cabinet</a>
+        <a href="#">Sine Up</a>
+        <a href="#">Contact</a>
+    </div>
+</div>
+<div class="title">
+    <h1>Edit your lesson</h1>
+</div>
+<div class="form">
+    <form id="add" action="#" class="add_form modal">
+
+        <div id="headline-block">
+            <label class="headline">Headline</label>
+            <input type="text" id="headline">
+        </div>
+        <div id="lesson">
+            <table id="phraseCards">
+
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <!--<div id="sentence-block">-->
+            <!--<table id="sentences">-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<td><input type="text" name="phrase" value="a1"></td>-->
+                    <!--<td><input type="text" name="translation" value="a2"></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td><input type="text" name="phrase" value="b1"></td>-->
+                    <!--<td><input type="text" name="translation" value="b2"></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td><input type="text" name="phrase" value="c1"></td>-->
+                    <!--<td><input type="text" name="translation" value="c2"></td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+            <!--<div>-->
+                <!--<button class="button numberOne" type="button" id="addRow" onclick="addLine()">Add</button>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div id="input_error">
+        </div>
+
+
+        <button class="button numberTwo"  id="addNew" onclick="addLesson()">Save</button>
+
+
+    </form>
+</div>
+
+</body>
+<script src="js/edit_lesson.js"></script>
+</html>
