@@ -24,6 +24,10 @@ public class PhraseServiceImpl implements PhraseService {
         phraseCardRepository.saveAll(phrase);
     }
 
+    @Override
+    public void deleteByLessonId(long lessonId) {
+        phraseCardRepository.deleteAllByLessonId(lessonId);
+    }
 
     @Override
     public List<PhraseCard> findByLesson(long lessonId) {

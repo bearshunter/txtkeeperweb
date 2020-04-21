@@ -1,6 +1,7 @@
 package dpo.thetextskeeper.txtkeeperweb.service;
 
 import dpo.thetextskeeper.txtkeeperweb.entity.Lesson;
+import dpo.thetextskeeper.txtkeeperweb.rest.dto.LessonWithCardsDto;
 
 import java.util.List;
 

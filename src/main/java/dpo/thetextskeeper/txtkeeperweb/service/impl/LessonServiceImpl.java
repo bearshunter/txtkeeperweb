@@ -1,7 +1,9 @@
 package dpo.thetextskeeper.txtkeeperweb.service.impl;
 
 import dpo.thetextskeeper.txtkeeperweb.entity.Lesson;
+import dpo.thetextskeeper.txtkeeperweb.entity.PhraseCard;
 import dpo.thetextskeeper.txtkeeperweb.repository.LessonRepository;
+import dpo.thetextskeeper.txtkeeperweb.repository.PhraseCardRepository;
 import dpo.thetextskeeper.txtkeeperweb.service.LessonService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,9 @@ public class LessonServiceImpl implements LessonService {
 
     @Autowired
     private LessonRepository lessonRepository;
+
+    @Autowired
+    private PhraseCardRepository phraseCardRepository;
 
 
     @Override

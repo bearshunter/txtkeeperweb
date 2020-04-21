@@ -2,6 +2,7 @@ package dpo.thetextskeeper.txtkeeperweb.rest;
 
 import dpo.thetextskeeper.txtkeeperweb.entity.Lesson;
 import dpo.thetextskeeper.txtkeeperweb.entity.PhraseCard;
+import dpo.thetextskeeper.txtkeeperweb.repository.PhraseCardRepository;
 import dpo.thetextskeeper.txtkeeperweb.rest.dto.LessonWithCardsDto;
 import dpo.thetextskeeper.txtkeeperweb.service.LessonService;
 import dpo.thetextskeeper.txtkeeperweb.service.PhraseService;
@@ -54,9 +55,16 @@ public class LessonController {
     }
 
     @PutMapping("/{id}")
-    public Lesson updateAnArticle(@RequestBody Lesson lesson) {
-        lessonService.update(lesson);
-        return lessonService.findById(lesson.getId());
+    public ResponseEntity<Void> updateALesson(@RequestBody LessonWithCardsDto lesson) {
+        final Lesson updatedLesson = new Lesson();
+        updatedLesson.setHeadline(lesson.getHeadline());
+        updatedLesson.setId(lesson.getLessonId());
+        lessonService.update(updatedLesson);
+        phraseService.deleteByLessonId(lesson.getLessonId());
+        final List<PhraseCard> phraseCards = lesson.getPhraseCards();
+        phraseCards.forEach(phraseCard -> phraseCard.setLessonId(lesson.getLessonId()));
+        phraseService.createPhraseCards(phraseCards);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")

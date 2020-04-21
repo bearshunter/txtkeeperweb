@@ -11,4 +11,6 @@ public interface PhraseService {
     List<PhraseCard> findByLesson(long articleId);
 
     void createPhraseCards(List<PhraseCard> phraseCards);
+
+    void deleteByLessonId(long lessonId);
 }
