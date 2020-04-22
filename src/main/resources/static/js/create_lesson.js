@@ -1,5 +1,5 @@
-function addLesson(event) {
-    // event.preventDefault();
+function addLesson() {
+    event.preventDefault();
     const headline = document.getElementById('headline').value;
     const backlight = document.getElementById('headline');
     if (headline === "") {
@@ -38,38 +38,18 @@ function addLesson(event) {
         console.log(lessonObj);
 
         if (!hasErrors) {
-            const ajaxRequest = new XMLHttpRequest();
-            ajaxRequest.open('POST', '/keeper/rest/lesson', true );
-            ajaxRequest.setRequestHeader('Content-Type', 'application/json');
-            ajaxRequest.send(JSON.stringify(lessonObj));
-
-            if (ajaxRequest.status === 200) {
-                window.location.href = '/keeper/';
-            } else {
-                alert("Error from server!!");
-            }
-
-
-            // $.ajax({
-            //     type: "POST",
-            //     contentType: "application/json; charset=utf-8",
-            //     url: "/keeper/rest/lesson",
-            //     data: JSON.stringify(lessonObj),
-            //     cache: false,
-            //     success: function (result) {
-            //         window.location.href = '/keeper/'
-            //     },
-            //     error: function (err) {
-            //         alert("Error from server!!")
-            //     }
-            // });
+            fetch("/keeper/rest/lesson/", {
+                method: 'POST',
+                body: JSON.stringify(lessonObj),
+                headers: {'Content-type':'application/json; charset=UTF-8'}
+            })
+                .then(data =>  window.location.href = '/keeper/') // Manipulate the data retrieved back, if we want to do something with it
+                .catch(err => console.log(err));
         }
 
     }
 
 }
-
-
 function addLine() {
     const table = document.getElementById("sentences").getElementsByTagName('tbody')[0];
     const newRow = table.insertRow();
@@ -78,5 +58,3 @@ function addLine() {
     cell1.innerHTML = "<input type=\"text\" name=\"phrase\" >";
     cell2.innerHTML = "<input type=\"text\" name=\"transation\" >";
 }
-
-

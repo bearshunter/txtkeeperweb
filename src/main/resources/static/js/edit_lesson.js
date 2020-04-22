@@ -41,10 +41,9 @@ function addLesson() {
     console.log(data);
     fetch("/keeper/rest/lesson/" + id, {
         method: 'PUT',
-            body: JSON.stringify(data),
+        body: JSON.stringify(data),
         headers: {'Content-type':'application/json; charset=UTF-8'}
         })
-        .then(response => response.json())
         .then(data => console.log(data)) // Manipulate the data retrieved back, if we want to do something with it
         .catch(err => console.log(err)); // Do something with the error
 }
