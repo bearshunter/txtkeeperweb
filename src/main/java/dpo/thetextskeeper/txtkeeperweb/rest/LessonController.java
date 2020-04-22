@@ -56,10 +56,10 @@ public class LessonController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateALesson(@RequestBody LessonWithCardsDto lesson) {
-        final Lesson updatedLesson = new Lesson();
+        final Lesson updatedLesson = lessonService.findById(lesson.getLessonId());
         updatedLesson.setHeadline(lesson.getHeadline());
-        updatedLesson.setId(lesson.getLessonId());
         lessonService.update(updatedLesson);
+
         phraseService.deleteByLessonId(lesson.getLessonId());
         final List<PhraseCard> phraseCards = lesson.getPhraseCards();
         phraseCards.forEach(phraseCard -> phraseCard.setLessonId(lesson.getLessonId()));
