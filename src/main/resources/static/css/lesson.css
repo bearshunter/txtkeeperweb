@@ -5,49 +5,77 @@
     text-align: center;
     margin: 45px;
 }
+/*#container{*/
+    /*display: grid;*/
+    /*grid-template-columns: repeat(2,400px 500px);*/
+/*}*/
 tbody{
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr ;
+    border: 5px red;
+    position: relative;
+    left: 30%;
+
 }
-#phraseCards {
+tr{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+    grid-template-columns: 1fr 1fr ;
+    background: linear-gradient(to top, rgba(46, 46, 46, 0.21), #fff);
+    border-radius: 8px;
+    height:auto;
+    width: 900px;
+    margin-left: 45px;
+    margin-top: 10px;
+    margin-right: 45px;
+    box-shadow: 0 0 10px rgba(33, 139, 216, 0.5); /* Параметры тени */
 
-#phraseCards td, #phraseCards th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
+}td{
+    top: 10px;
 
-#phraseCards tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-#phraseCards tr:hover {
-    background-color: #ddd;
-}
-/*.button_fix {*/
+    padding: 15px;
+    margin: 5px;
+    text-align: center;
+ }
+/*#phraseCards {*/
     /*display: grid;*/
-    /*grid-template-columns: 1fr;*/
-    /*justify-items: center;*/
-    /*margin-top: 40px;*/
-    /*margin-bottom: 260px;*/
+
+
+    /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
+    /*border-collapse: collapse;*/
+    /*width: 100%;*/
 /*}*/
-/*button{*/
-    /*background: linear-gradient(to top, #000000, #fff);*/
-    /*color: #3df1ff;*/
-    /*border-radius: 8px;*/
-    /*width: 240px;*/
-    /*padding: 20px;*/
-    /*text-decoration: none;*/
-    /*text-align: center;*/
-    /*text-transform: uppercase;*/
-    /*font-size: 20px;*/
-    /*box-shadow: 0 0 10px rgba(33, 139, 216, 0.5); !* Параметры тени *!*/
-    /*margin: 15px;*/
-    /*position: relative;*/
-    /*left: 41.2%;*/
+
+/*#phraseCards td, #phraseCards th {*/
+    /*border: 1px solid #ddd;*/
+    /*padding: 8px;*/
 /*}*/
+
+/*#phraseCards tr:nth-child(even) {*/
+    /*background-color: #f2f2f2;*/
+/*}*/
+
+/*#phraseCards tr:hover {*/
+    /*background-color: #ddd;*/
+/*}*/
+.button_fix {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-top: 40px;
+
+}
+button{
+    background: linear-gradient(to top, #000000, #fff);
+    color: #3df1ff;
+    border-radius: 8px;
+    width: 240px;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(33, 139, 216, 0.5); /* Параметры тени */
+    margin: 15px;
+    position: relative;
+    left: 41.2%;
+}

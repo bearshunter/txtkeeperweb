@@ -3,9 +3,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>YourApp</title>
-    <script src="js/jquery-3.4.1.min.js"></script>
+
     <link rel="stylesheet" href="css/lesson.css">
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/myModal.css">
 
 </head>
 <body>
@@ -17,7 +18,7 @@
         <a href="#">Home</a>
         <a href="index.html">Lessons</a>
         <a href="create_lesson.html">Cabinet</a>
-        <a href="#">Sine Up</a>
+        <a href="sign_up.html">Sign Up</a>
         <a href="#">Contact</a>
     </div>
 </div>
@@ -33,7 +34,16 @@
 
         </tbody>
     </table>
+
+
+    <button class="button_fix" id="next">Next</button>
     <button class="button_fix" id="reset">Reset</button>
+</div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <h2>Good job!</h2>
+        <button class="modal-button" id="closeModal">Repeat again</button>
+    </div>
 </div>
 </body>
 <script src="js/lesson.js"></script>

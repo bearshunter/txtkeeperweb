@@ -1,0 +1,53 @@
+form{
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 8px;
+    height: auto;
+    width: auto;
+    margin-left: 250px;
+    margin-top: 45px;
+    margin-right: 250px;
+    box-shadow: 0 0 10px rgba(33, 139, 216, 0.5); /* Параметры тени */
+    background: rgb(235,241,242);
+    background: radial-gradient(circle, rgba(235,241,242,1) 0%, rgba(186,196,196,1) 100%);
+    padding-bottom: 15px;
+
+}
+h1{
+    text-align: center;
+    margin-top: 15px;
+
+}
+p {
+    text-align: center;
+    margin-top: 15px;
+
+}
+input{
+    margin-top: 15px;
+    margin-left: 45px;
+    margin-right: 45px;
+
+    text-align: center ;
+    font-size: 18px;
+    border-radius: 8px;
+    height: 40px;
+    width: 1006px;
+
+}
+button{
+    background: linear-gradient(to top, #000000, #fff);
+    color: #3df1ff;
+    border-radius: 8px;
+    width: 240px;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(33, 139, 216, 0.5); /* Параметры тени */
+    margin-top: 15px;
+    margin-bottom: 1px;
+    position: relative;
+    left: 39%;
+}

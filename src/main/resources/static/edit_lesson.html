@@ -15,7 +15,7 @@
         <a href="#">Home</a>
         <a href="index.html">Lessons</a>
         <a href="create_lesson.html">Cabinet</a>
-        <a href="#">Sine Up</a>
+        <a href="sign_up.html">Sign Up</a>
         <a href="#">Contact</a>
     </div>
 </div>
@@ -39,8 +39,19 @@
         </div>
         <div id="input_error">
         </div>
+        <div>
+            <button class="button numberOne" type="button" id="addRow" onclick="addLine()">Add row</button>
+        </div>
         <button class="button numberTwo"  id="addNew" onclick="addLesson()">Save</button>
     </form>
+    <div id="myModal" class="modal" >
+        <div class="modal-content" >
+            <h2>Your lesson saved!</h2>
+            <button class="modal-button" onclick="backToLessons()">Back to lessons</button>
+            <button class="modal-button" onclick="closeModal()">Edit again</button>
+        </div>
+
+    </div>
 </div>
 
 </body>
